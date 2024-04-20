@@ -3,6 +3,12 @@ body {
     color: #202020;
 }
 
+table, td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
 .container {
     max-width: 800px;
 }
