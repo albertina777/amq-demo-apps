@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Red Hat Bank - Intranet (v1.0)</title>
+    <title>Sample bank Application</title>
     <link rel="stylesheet" href="/css/wing.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -123,7 +123,7 @@
 <body ng-app="BankAccountManagement" ng-controller="BankAccountManagementController">
 
     <div class="container">
-        <h1>Red Hat Training Bank - Intranet</h1>
+        <h1>Sample Banking Application</h1>
 
         <h3>Create a Bank Account</h3>
         <form ng-submit="create()">
@@ -138,15 +138,21 @@
         </form>
 
         <h3>Customer Bank Accounts</h3>
-        <div class="cards">
-            <div class="card" ng-repeat="account in bankAccounts">
-                <h5 class="card-header">Account #{{ account.id }}</h5>
-                <p class="card-body">
-                    Current Balance: {{ account.balance }} <br>
-                    Type: {{ account.profile }}
-                </p>
-                <div class="card-footer center text-center">
-                    <div class="row">
+
+        <table>
+       <tr>
+        <td>Account ID</td>
+        <td>Balance</td>
+        <td>Type</td>
+        <td>Deposit/Withdraw</td>
+        <td>Delete</td>
+       </tr>
+       <tr ng-repeat="account in bankAccounts">
+        <td>#{{ account.id }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account.profile }}</td>
+        <td>
+            <div class="row">
                         <div class="col">
                             <input type="number" min="1" placeholder="Amount" ng-model="account.amount" />
                         </div>
@@ -159,14 +165,14 @@
                             <button ng-click="withdraw( account )">Withdraw</button>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer center text-center">
-                    <p>
+        </td>
+           <td> <p>
                         <button ng-click="remove( account )" class='outline'>Remove</button>
                     </p>
-                </div>
-            </div>
-        </div>
-    </div>
+           </td>
+       </tr>
+       </table>
+        
+      
 </body>
 </html>
