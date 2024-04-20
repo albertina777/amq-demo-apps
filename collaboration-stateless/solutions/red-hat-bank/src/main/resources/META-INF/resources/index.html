@@ -152,7 +152,8 @@
         <td>{{ account.balance }}</td>
         <td>{{ account.profile }}</td>
         <td>
-            <div class="row">
+              <div class="card-footer center text-center">
+               <div class="row">
                         <div class="col">
                             <input type="number" min="1" placeholder="Amount" ng-model="account.amount" />
                         </div>
@@ -164,8 +165,9 @@
                         <div class="col">
                             <button ng-click="withdraw( account )">Withdraw</button>
                         </div>
-                    </div>
-        </td>
+                </div>
+              </div>
+          </td>
            <td> <p>
                         <button ng-click="remove( account )" class='outline'>Remove</button>
                     </p>
