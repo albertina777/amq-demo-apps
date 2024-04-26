@@ -40,7 +40,6 @@
             };
 
             $scope.remove = function (bankAccount) {
-                validateBankAccount(bankAccount);
 
                 $http({
                     method: 'DELETE',
